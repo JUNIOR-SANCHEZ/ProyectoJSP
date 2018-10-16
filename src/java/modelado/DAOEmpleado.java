@@ -1,32 +1,41 @@
 package modelado;
 
-import java.util.List;
-
+import java.util.*;
+import java.sql.*;
+import uml.Empleado;
 public class DAOEmpleado implements Operaciones{
 
     @Override
     public String insertar(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Empleado e = (Empleado) obj;
+        Connection con;
+        PreparedStatement pst;
+        String sql = "";
+        String respuesta = "";
+        return "";
+        
     }
 
     @Override
-    public String eliminar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String eliminar(Object obj) {
+        return "";
     }
 
     @Override
     public String modificar(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "";
     }
 
     @Override
     public List<?> consultar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Empleado> x = new ArrayList<>();
+        return x;
     }
 
     @Override
     public List<?> filtrar(String campo, String criterio) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Empleado> x = new ArrayList<>();
+        return x;
     }
     
 }
