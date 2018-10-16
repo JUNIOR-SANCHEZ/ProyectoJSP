@@ -7,7 +7,7 @@ private String clave;
 
     public DataBase() {
         this.driver = "com.mysql.jdbc.Driver";
-        this.url = "jdbc:mysql://loaclhost:3306/proyectojsp";
+        this.url = "jdbc:mysql://localhost:3306/proyectojsp";
         this.usuario = "root";
         this.clave = "";
     }

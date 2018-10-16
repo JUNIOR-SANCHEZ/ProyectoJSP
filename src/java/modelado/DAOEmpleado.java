@@ -13,7 +13,6 @@ public class DAOEmpleado implements Operaciones{
         String sql = "";
         String respuesta = "";
         return "";
-        
     }
 
     @Override

@@ -94,7 +94,7 @@ public class DAOAlmacen implements Operaciones {
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
-        String sql = "SELECT * FROM ALMACEN;";
+        String sql = "SELECT * FROM ALMACEN";
         try {
             Class.forName(db.getDriver());
             con = DriverManager.getConnection(
