@@ -1,47 +1,44 @@
 package modelado;
-
 import java.util.*;
 import java.sql.*;
-import uml.Almacen;
-
-public class DAOAlmacen implements Operaciones {
-
-    DataBase db = new DataBase();
-
+import uml.Cliente;
+public class DAOCliente implements Operaciones{
+ DataBase db = new DataBase();
     @Override
     public String insertar(Object obj) {
-        Almacen a = (Almacen) obj;
-        Connection con;
+          Cliente C=(Cliente) obj;
+       Connection con;
         PreparedStatement pst;
-        String sql = "INSERT INTO ALMACEN VALUES (?,?,?,?,?);";
-        String respuesta = "";
+        String sql="insert into cliente values (?,?,?,?,?,?);";
+        String respuesta="";
         try {
             Class.forName(db.getDriver());
-            con = DriverManager.getConnection(
+            con=DriverManager.getConnection(
                     db.getUrl(),
                     db.getUsuario(),
-                    db.getClave()
+                    db.getClave()         
             );
-            pst = con.prepareStatement(sql);
-            pst.setInt(1, a.getCodigo_almacen());
-            pst.setString(2, a.getNombre_almacen());
-            pst.setString(3, a.getTelefono_almacen());
-            pst.setString(4, a.getCorreo_almacen());
-            pst.setString(5, a.getDireccion_almacen());
-            int filas = pst.executeUpdate();
+            pst=con.prepareStatement(sql);
+            pst.setString(1,C.getN_identificacion_cliente());
+            pst.setString(2,C.getNombres_cliente());
+            pst.setString(3,C.getApellidos_cliente());
+            pst.setString(4, C.getTelefono_cliente());
+            pst.setString(5,C.getCorreo_cliente());
+            pst.setInt(6,C.getCodigo_almacen());
+            int filas= pst.executeUpdate();
             respuesta = "Se regitro " + filas + " nuevo elemento";
             con.close();
         } catch (ClassNotFoundException | SQLException e) {
         }
-        return respuesta;
+        return respuesta; 
     }
 
     @Override
     public String eliminar(Object obj) {
-        Almacen a = (Almacen) obj;
+    Cliente C = (Cliente) obj;
         Connection con;
         PreparedStatement pst;
-        String sql = "DELETE FROM ALMACEN WHERE CODIGO_ALMACEN = ? ;";
+        String sql = "DELETE FROM cliente WHERE N_IDENTIFICACION_CLIENTE= ? ;";
         String respuesta = "";
         try {
             Class.forName(db.getDriver());
@@ -51,9 +48,9 @@ public class DAOAlmacen implements Operaciones {
                     db.getClave()
             );
             pst = con.prepareStatement(sql);
-            pst.setInt(1, a.getCodigo_almacen());
+            pst.setString(1, C.getN_identificacion_cliente());
             int filas = pst.executeUpdate();
-            respuesta = "Se regitro " + filas + " nuevo elemento";
+            respuesta = "Se Elimino" + filas + " nuevo elemento";
             con.close();
         } catch (ClassNotFoundException | SQLException e) {
         }
@@ -62,10 +59,10 @@ public class DAOAlmacen implements Operaciones {
 
     @Override
     public String modificar(Object obj) {
-        Almacen a = (Almacen) obj;
+         Cliente C= (Cliente) obj;
         Connection con;
         PreparedStatement pst;
-        String sql = "UPDATE ALMACEN SET NOMBRE_ALMACEN = ?, TELEFONO_ALMACEN = ?, CORREO_ALMACEN = ?, DIRECCION_ALMACEN = ? WHERE CODIGO_ALMACEN =? ;";
+        String sql = "UPDATE cliente SET NOMBRE_CLIENTE = ?, APELLIDO_CLIENTE = ?, TELEFONO_CLIENTE = ?, CORREO_CLIENTE= ?,CODIGO_ALMACEN=? WHERE N_IDENTIFICACION_CLIENTE =? ;";
         String respuesta = "";
         try {
             Class.forName(db.getDriver());
@@ -75,11 +72,12 @@ public class DAOAlmacen implements Operaciones {
                     db.getClave()
             );
             pst = con.prepareStatement(sql);
-            pst.setString(1, a.getNombre_almacen());
-            pst.setString(2, a.getTelefono_almacen());
-            pst.setString(3, a.getCorreo_almacen());
-            pst.setString(4, a.getDireccion_almacen());
-            pst.setInt(5, a.getCodigo_almacen());
+            pst.setString(1, C.getNombres_cliente());
+            pst.setString(2, C.getApellidos_cliente());
+            pst.setString(3, C.getTelefono_cliente());
+            pst.setString(4, C.getCorreo_cliente());
+            pst.setInt(5, C.getCodigo_almacen());
+            pst.setString(6, C.getN_identificacion_cliente());
             int filas = pst.executeUpdate();
             respuesta = "Se modifico " + filas + " nuevo elemento";
             con.close();
@@ -89,12 +87,12 @@ public class DAOAlmacen implements Operaciones {
     }
 
     @Override
-    public List<Almacen> consultar() {
-        List<Almacen> x = new ArrayList<>();
+    public List<Cliente> consultar() {
+      List<Cliente> datos = new ArrayList<>();
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
-        String sql = "SELECT * FROM ALMACEN";
+        String sql = "SELECT * FROM cliente";
         try {
             Class.forName(db.getDriver());
             con = DriverManager.getConnection(
@@ -105,20 +103,20 @@ public class DAOAlmacen implements Operaciones {
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                x.add(new Almacen(rs.getInt("CODIGO_ALMACEN"), rs.getString("NOMBRE_ALMACEN"), rs.getString("TELEFONO_ALMACEN"), rs.getString("CORREO_ALMACEN"), rs.getString("DIRECCION_ALMACEN")));
+                datos.add(new Cliente(rs.getString("N_IDENTIFICACION_CLIENTE"), rs.getString("NOMBRE_CLIENTE"), rs.getString("APELLIDO_CLIENTE"), rs.getString("TELEFONO_CLIENTE"), rs.getString("CORREO_CLIENTE"), rs.getInt("CODIGO_ALMACEN")));
             }
         } catch (ClassNotFoundException | SQLException e) {
         }
-        return x;
+        return datos;
     }
 
     @Override
-    public List<Almacen> filtrar(String campo, String criterio) {
-        List<Almacen> x = new ArrayList<>();
+    public List<Cliente> filtrar(String campo, String criterio) {
+       List<Cliente> datos = new ArrayList<>();
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
-        String sql = "SELECT " + campo + " FROM ALMACEN WHERE " + criterio + ";";
+        String sql = "SELECT " + campo + " FROM cliente WHERE " + criterio + ";";
         try {
             Class.forName(db.getDriver());
             con = DriverManager.getConnection(
@@ -129,11 +127,11 @@ public class DAOAlmacen implements Operaciones {
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                x.add(new Almacen(rs.getInt("CODIGO_ALMACEN"), rs.getString("NOMBRE_ALMACEN"), rs.getString("TELEFONO_ALMACEN"), rs.getString("CORREO_ALMACEN"), rs.getString("DIRECCION_ALMACEN")));
+                datos.add(new Cliente(rs.getString("N_IDENTIFICACION_CLIENTE"), rs.getString("NOMBRE_CLIENTE"), rs.getString("APELLIDO_CLIENTE"), rs.getString("TELEFONO_CLIENTE"), rs.getString("CORREO_CLIENTE"), rs.getInt("CODIGO_ALMACEN")));
             }
         } catch (ClassNotFoundException | SQLException e) {
         }
-        return x;
+        return datos;
     }
-
+    
 }

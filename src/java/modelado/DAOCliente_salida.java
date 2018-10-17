@@ -2,18 +2,16 @@ package modelado;
 
 import java.util.*;
 import java.sql.*;
-import uml.Almacen;
-
-public class DAOAlmacen implements Operaciones {
-
+import uml.Cliente_Salida;
+public class DAOCliente_salida  implements Operaciones {
     DataBase db = new DataBase();
 
     @Override
     public String insertar(Object obj) {
-        Almacen a = (Almacen) obj;
+       Cliente_Salida Cs = (Cliente_Salida) obj;
         Connection con;
         PreparedStatement pst;
-        String sql = "INSERT INTO ALMACEN VALUES (?,?,?,?,?);";
+        String sql = "INSERT INTO cliente_salida VALUES (?,?,?,?);";
         String respuesta = "";
         try {
             Class.forName(db.getDriver());
@@ -23,11 +21,10 @@ public class DAOAlmacen implements Operaciones {
                     db.getClave()
             );
             pst = con.prepareStatement(sql);
-            pst.setInt(1, a.getCodigo_almacen());
-            pst.setString(2, a.getNombre_almacen());
-            pst.setString(3, a.getTelefono_almacen());
-            pst.setString(4, a.getCorreo_almacen());
-            pst.setString(5, a.getDireccion_almacen());
+            pst.setString(1, Cs.getN_identificacion_cliente());
+            pst.setInt(2, Cs.getCodigo_salida());
+            pst.setInt(3, Cs.getCodigo_bodega());
+            pst.setInt(4, Cs.getCodigo_almacen());
             int filas = pst.executeUpdate();
             respuesta = "Se regitro " + filas + " nuevo elemento";
             con.close();
@@ -38,10 +35,10 @@ public class DAOAlmacen implements Operaciones {
 
     @Override
     public String eliminar(Object obj) {
-        Almacen a = (Almacen) obj;
+         Cliente_Salida Cs = (Cliente_Salida) obj;
         Connection con;
         PreparedStatement pst;
-        String sql = "DELETE FROM ALMACEN WHERE CODIGO_ALMACEN = ? ;";
+        String sql = "DELETE FROM cliente_salida WHERE N_IDENTIFICACION_CLIENTE = ? ;";
         String respuesta = "";
         try {
             Class.forName(db.getDriver());
@@ -51,9 +48,9 @@ public class DAOAlmacen implements Operaciones {
                     db.getClave()
             );
             pst = con.prepareStatement(sql);
-            pst.setInt(1, a.getCodigo_almacen());
+            pst.setString(1, Cs.getN_identificacion_cliente());
             int filas = pst.executeUpdate();
-            respuesta = "Se regitro " + filas + " nuevo elemento";
+            respuesta = "Se Elimino " + filas + " nuevo elemento";
             con.close();
         } catch (ClassNotFoundException | SQLException e) {
         }
@@ -62,10 +59,10 @@ public class DAOAlmacen implements Operaciones {
 
     @Override
     public String modificar(Object obj) {
-        Almacen a = (Almacen) obj;
+        Cliente_Salida Cs = (Cliente_Salida) obj;
         Connection con;
         PreparedStatement pst;
-        String sql = "UPDATE ALMACEN SET NOMBRE_ALMACEN = ?, TELEFONO_ALMACEN = ?, CORREO_ALMACEN = ?, DIRECCION_ALMACEN = ? WHERE CODIGO_ALMACEN =? ;";
+        String sql = "UPDATE ALMACEN SET CODIGO_SALIDA = ?, CODIGO_BODEGA = ?, CODIGO_ALMACEN = ? WHERE N_IDENTIFICACION_CLIENTE =? ;";
         String respuesta = "";
         try {
             Class.forName(db.getDriver());
@@ -75,11 +72,11 @@ public class DAOAlmacen implements Operaciones {
                     db.getClave()
             );
             pst = con.prepareStatement(sql);
-            pst.setString(1, a.getNombre_almacen());
-            pst.setString(2, a.getTelefono_almacen());
-            pst.setString(3, a.getCorreo_almacen());
-            pst.setString(4, a.getDireccion_almacen());
-            pst.setInt(5, a.getCodigo_almacen());
+            pst.setInt(1, Cs.getCodigo_salida());
+            pst.setInt(2, Cs.getCodigo_bodega());
+            pst.setInt(3, Cs.getCodigo_almacen());
+            pst.setString(4, Cs.getN_identificacion_cliente());
+            
             int filas = pst.executeUpdate();
             respuesta = "Se modifico " + filas + " nuevo elemento";
             con.close();
@@ -89,12 +86,12 @@ public class DAOAlmacen implements Operaciones {
     }
 
     @Override
-    public List<Almacen> consultar() {
-        List<Almacen> x = new ArrayList<>();
+    public List<Cliente_Salida> consultar() {
+        List<Cliente_Salida> datos = new ArrayList<>();
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
-        String sql = "SELECT * FROM ALMACEN";
+        String sql = "SELECT * FROM cliente_salida";
         try {
             Class.forName(db.getDriver());
             con = DriverManager.getConnection(
@@ -105,20 +102,20 @@ public class DAOAlmacen implements Operaciones {
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                x.add(new Almacen(rs.getInt("CODIGO_ALMACEN"), rs.getString("NOMBRE_ALMACEN"), rs.getString("TELEFONO_ALMACEN"), rs.getString("CORREO_ALMACEN"), rs.getString("DIRECCION_ALMACEN")));
+                datos.add(new Cliente_Salida(rs.getString("N_IDENTIFICACION_CLIENTE"), rs.getInt("CODIGO_SALIDA"), rs.getInt("CODIGO_BODEGA"), rs.getInt("CODIGO_ALMACEN")));
             }
         } catch (ClassNotFoundException | SQLException e) {
         }
-        return x;
+        return datos;
     }
 
     @Override
-    public List<Almacen> filtrar(String campo, String criterio) {
-        List<Almacen> x = new ArrayList<>();
+    public List<Cliente_Salida> filtrar(String campo, String criterio) {
+          List<Cliente_Salida> datos = new ArrayList<>();
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
-        String sql = "SELECT " + campo + " FROM ALMACEN WHERE " + criterio + ";";
+        String sql = "SELECT " + campo + " FROM cliente_salida WHERE " + criterio + ";";
         try {
             Class.forName(db.getDriver());
             con = DriverManager.getConnection(
@@ -129,11 +126,10 @@ public class DAOAlmacen implements Operaciones {
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                x.add(new Almacen(rs.getInt("CODIGO_ALMACEN"), rs.getString("NOMBRE_ALMACEN"), rs.getString("TELEFONO_ALMACEN"), rs.getString("CORREO_ALMACEN"), rs.getString("DIRECCION_ALMACEN")));
+                datos.add(new Cliente_Salida(rs.getString("N_IDENTIFICACION_CLIENTE"), rs.getInt("CODIGO_SALIDA"), rs.getInt("CODIGO_BODEGA"), rs.getInt("CODIGO_ALMACEN")));
             }
         } catch (ClassNotFoundException | SQLException e) {
         }
-        return x;
+        return datos;
     }
-
 }
