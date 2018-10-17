@@ -37,8 +37,8 @@ public class DAOAlmacen implements Operaciones {
     }
 
     @Override
-    public String eliminar(Object obj) {
-        Almacen a = (Almacen) obj;
+    public String eliminar(int id) {
+        
         Connection con;
         PreparedStatement pst;
         String sql = "DELETE FROM ALMACEN WHERE CODIGO_ALMACEN = ? ;";
@@ -51,7 +51,7 @@ public class DAOAlmacen implements Operaciones {
                     db.getClave()
             );
             pst = con.prepareStatement(sql);
-            pst.setInt(1, a.getCodigo_almacen());
+            pst.setInt(1, id);
             int filas = pst.executeUpdate();
             respuesta = "Se regitro " + filas + " nuevo elemento";
             con.close();

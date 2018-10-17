@@ -6,7 +6,7 @@ public interface Operaciones {
 
     public String insertar(Object obj);
 
-    public String eliminar(Object obj);
+    public String eliminar(int id);
 
     public String modificar(Object obj);
 

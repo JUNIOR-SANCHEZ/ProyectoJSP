@@ -7,9 +7,10 @@ public class Empleado {
   private int edad_empleados;
   private String cargo_empleados;
   private String correo_empleados;
+  private int codigo_almacen;
     public Empleado() {
     }
-    public Empleado(int codigo_empleados, String n_identificacion_empleados, String nombres_empleados, String apellidos_empleados, int edad_empleados, String cargo_empleados, String correo_empleados) {
+    public Empleado(int codigo_empleados, String n_identificacion_empleados, String nombres_empleados, String apellidos_empleados, int edad_empleados, String cargo_empleados, String correo_empleados,int codigo_almacen) {
         this.codigo_empleados = codigo_empleados;
         this.n_identificacion_empleados = n_identificacion_empleados;
         this.nombres_empleados = nombres_empleados;
@@ -17,6 +18,7 @@ public class Empleado {
         this.edad_empleados = edad_empleados;
         this.cargo_empleados = cargo_empleados;
         this.correo_empleados = correo_empleados;
+        this.codigo_almacen = codigo_almacen;
     }
 
     public String getCorreo_empleados() {
@@ -74,7 +76,13 @@ public class Empleado {
     public void setCargo_empleados(String cargo_empleados) {
         this.cargo_empleados = cargo_empleados;
     }
-  
+    public int getCodigo_almacen(){
+        return this.codigo_almacen;
+    }
+    
+    public void setCodigo_almacen(int codigo_almacen) {
+        this.codigo_almacen = codigo_almacen;
+    }
   
  
 }
