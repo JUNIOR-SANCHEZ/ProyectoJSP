@@ -2,21 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Personal.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/web/index.jsp</file>
-=======
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOEmpleado.java</file>
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/Operaciones.java</file>
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/web/index.jsp</file>
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DataBase.java</file>
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Empleado.java</file>
->>>>>>> feb48217bea4e2003fd4eb0543bb93d04041c541
+            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOCliente.java</file>
+            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOBodega.java</file>
+            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOAlmacen.java</file>
         </group>
->>>>>>> origin/Inventario
     </open-files>
 </project-private>

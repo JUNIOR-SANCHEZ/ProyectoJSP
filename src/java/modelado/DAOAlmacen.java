@@ -107,6 +107,7 @@ public class DAOAlmacen implements Operaciones {
             while (rs.next()) {
                 x.add(new Almacen(rs.getInt("CODIGO_ALMACEN"), rs.getString("NOMBRE_ALMACEN"), rs.getString("TELEFONO_ALMACEN"), rs.getString("CORREO_ALMACEN"), rs.getString("DIRECCION_ALMACEN")));
             }
+            con.close();
         } catch (ClassNotFoundException | SQLException e) {
         }
         return x;
@@ -131,6 +132,7 @@ public class DAOAlmacen implements Operaciones {
             while (rs.next()) {
                 x.add(new Almacen(rs.getInt("CODIGO_ALMACEN"), rs.getString("NOMBRE_ALMACEN"), rs.getString("TELEFONO_ALMACEN"), rs.getString("CORREO_ALMACEN"), rs.getString("DIRECCION_ALMACEN")));
             }
+            con.close();
         } catch (ClassNotFoundException | SQLException e) {
         }
         return x;
