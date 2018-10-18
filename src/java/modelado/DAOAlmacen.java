@@ -114,7 +114,7 @@ public class DAOAlmacen implements Operaciones {
     }
 
     @Override
-    public List<?> filtrar(String campo, String criterio) {
+    public List<Almacen> filtrar(String campo, String criterio) {
         List<Almacen> x = new ArrayList<>();
         Connection con;
         PreparedStatement pst;
