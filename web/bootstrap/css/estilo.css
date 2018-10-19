@@ -1,0 +1,41 @@
+body{
+    background:  url("../imagenes/fondo azul.jpg"); 
+  
+}
+#cuadro{
+    width: 330PX;
+    height: 400px;
+    margin: auto;
+    margin-top: 150px;
+    border-radius: 10px;
+}
+#cabeza{
+    width: 330px;
+    height: 70px;
+    background: #737373;
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 95px;
+    padding-top: 35px;
+    color: #f9f7f7;
+}
+#cuerpo{
+    width: 330;
+    height: 480px;
+    padding-left: 15px;
+    padding-right: 1px;
+    border-radius:  0px 0px 10px 10px;
+    background:#f9f7f7; 
+    
+}
+#botonlogin{
+    width: 200px;
+    height: 40px;
+}
+#inputEmail3{
+    width: 270px;
+}
+#inputPassword3{
+    width: 270px;
+}
+
+

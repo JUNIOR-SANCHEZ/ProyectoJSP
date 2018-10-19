@@ -17,7 +17,7 @@
             <p>Código almacén <input type="text" name="txtcodigo"/></p>
             <p>Nombre almacén <input type="text" name="txtnombre"/></p>
             <p>Teléfono almacén <input type="text" name="txttelefono"/></p>
-            <p>Correo almacén <input type="text" name="txtcorre"/></p>
+            <p>Correo almacén <input type="email" name="txtcorre"/></p>
             <p>Dirección almacén <input type="text" name="txtdireccion"/></p>
             <input type="submit" value="Guardar"/>
         </form>
