@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : 14-oct-2018, 13:40:35
+    Created on : 19-oct-2018, 14:38:09
     Author     : JUNIOR
 --%>
 
@@ -13,5 +13,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <jsp:forward page="listarUsuarios.jsp"></jsp:forward>
     </body>
 </html>
