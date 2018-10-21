@@ -1,5 +1,5 @@
 body{
-    background:  url("../imagenes/fondo azul.jpg"); 
+    background:  url("../images/imagenes/fondo azul.jpg"); 
   
 }
 #cuadro{
@@ -20,22 +20,25 @@ body{
 }
 #cuerpo{
     width: 330;
-    height: 480px;
+    height: 500px;
     padding-left: 15px;
-    padding-right: 1px;
+    padding-right: 15px;
     border-radius:  0px 0px 10px 10px;
     background:#f9f7f7; 
+    padding-top: 5px;
     
 }
 #botonlogin{
-    width: 200px;
+    width: 300px;
     height: 40px;
+    border-radius:  10px 10px 10px 10px;
 }
 #inputEmail3{
-    width: 270px;
+    width: 300px;
 }
 #inputPassword3{
-    width: 270px;
+    width: 300px;
+
 }
 
 

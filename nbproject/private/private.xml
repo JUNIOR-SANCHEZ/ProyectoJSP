@@ -3,38 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Almacen.java</file>
-            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOAlmacen.java</file>
-            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/src/java/model/Usuario.java</file>
             <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/vistas/usuario/Login.jsp</file>
-            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/Operaciones.java</file>
-            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/bootstrap/css/estilo.css</file>
-            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/src/java/controlador/SERVAlmacen.java</file>
-            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/vistas/almacen/VistaAlmacen.jsp</file>
-=======
-<<<<<<< HEAD
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOCliente.java</file>
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOBodega.java</file>
-            <file>file:/C:/Users/JUNIOR/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOAlmacen.java</file>
-=======
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DataBase.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Provedor.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Cliente.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/provedor_entrada.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Cliente_Salida.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOAlmacen.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/DAOEmpleado.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/productos_entrada.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/productos_salida.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/modelado/Operaciones.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/web/index.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/controlador/SERVAlmacen.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Bodega.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/web/vistas/almacen/VistaAlmacen.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProyectoJSP/src/java/uml/Empleado.java</file>
->>>>>>> origin/Inventario
->>>>>>> origin/Inventario
+            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/vistas/usuario/index.jsp</file>
+            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/src/java/dao/UsuariosDao.java</file>
+            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/vistas/usuario/Registro_usuarios.jsp</file>
+            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/vistas/usuario/listarUsuarios.jsp</file>
+            <file>file:/C:/Users/jgtan/Documents/NetBeansProjects/ProyectoJSP/web/vistas/usuario/css.jsp</file>
         </group>
     </open-files>
 </project-private>
